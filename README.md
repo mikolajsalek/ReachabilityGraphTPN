@@ -1,18 +1,15 @@
-# ReachabilityGraphTPN
-Reachability Graph for Time Petri Net
+# Reachability Graph for Time Petri Net
+This algorithm is a major component of my engineering thesis and is integrated into the Holmes tool (link), designed for analyzing Petri net models.
 
-This algorithm is major part of my engineering thesis. It's part of Holmes https://academic.oup.com/bioinformatics/article/33/23/3822/4076052?login=false tool, for analyzing petri net models.
+The primary goal of the algorithm is to generate a reachability graph for finite Time Petri Nets. While it is integrated into Holmes, it can also be run locally by setting holmes_on = false. Since Holmes is written in Java and the algorithm is implemented in C++, I provided an integration layer using JSON serialization to handle input from Holmes and output from the algorithm. Additionally, the visualization was implemented using the GraphStream library, and a GUI was developed to display the visualization interactively.
 
-The main goal of algorithm, is to create reachability graph for finite Time Petri Net. It's integrated into Holmes, but you can easily use it locally, without Holmes, by setting holmes_on = false. 
-Since Holmes is java-written programm and algorithm is written in C++, I've also provided integration between Java and C++ using JSON serializers, to read input from Holmes and output from algorithm itself, additonaly visualization has been made using GraphStream library and GUI to show that visualization.
+## Input:
+The algorithm requires the following inputs:
 
-As an input, algorithm takes: 2D vector representing incidency matrix of petri net, vector representing p-marking of petri net and vector representing time intervals for the net. 
-
-Files in this repository:
-RG_TPN.cpp -> It's implementation of algorithm for creating reduced reachability graph from "Time and Petri Nets" Louchka Popova-Zeugmann.
-HolmesStSpRGtpn.java -> It class that's responsible for integrating previous algorithm and java written Holmes. It's also creating not so complex GUI and visualization using GraphStream.
-Graph_Click.java -> Java class with implemented functions regarding to interactive elements in GUI and graph visualization.
-
-
-
-
+* A 2D vector representing the incidence matrix of the Petri net.
+* A vector representing the P-marking of the Petri net.
+* A vector representing the time intervals of the net.
+## Repository Files:
+* RG_TPN.cpp: Implements the algorithm for creating a reduced reachability graph, based on "Time and Petri Nets" by Louchka Popova-Zeugmann.
+* HolmesStSpRGtpn.java: Integrates the algorithm with Holmes, provides a simple GUI, and enables visualization using GraphStream.
+* Graph_Click.java: Implements functions for interactive elements in the GUI and graph visualization.
